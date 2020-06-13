@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class MovieCatalogServiceApplication {
 
-	@Bean //producer
 	@LoadBalanced
+	@Bean //producer
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}

@@ -11,12 +11,12 @@ import com.ratingdataservice.models.UserRating;
 @RequestMapping("/ratings")
 public class RatingResource {
 	
-	@RequestMapping("movies/{movieId}")
+	@RequestMapping("movie/{movieId}")
     public Rating getMovieRating(@PathVariable("movieId") String movieId) {
         return new Rating(movieId, 4);
 	}
 	
-	@RequestMapping("users/{userId}")
+	@RequestMapping("user/{userId}")
     public UserRating getUserRatings(@PathVariable("userId") String userId) {
 		UserRating userRatings = new UserRating();
         userRatings.initData(userId);
