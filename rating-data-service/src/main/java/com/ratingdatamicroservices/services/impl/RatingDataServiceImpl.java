@@ -1,4 +1,4 @@
-package com.ratingdatamicroservices.impl;
+package com.ratingdatamicroservices.services.impl;
 
 import org.springframework.stereotype.Service;
 
