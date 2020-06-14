@@ -1,4 +1,4 @@
-package com.movieinfoservice;
+package com.movieinfomicroservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class MovieInfoServiceApplication {
+public class MovieInfoMicroserviceApplication {
 
 	@Bean //producer
 	public RestTemplate getRestTemplate() {
@@ -16,7 +16,7 @@ public class MovieInfoServiceApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(MovieInfoServiceApplication.class, args);
+		SpringApplication.run(MovieInfoMicroserviceApplication.class, args);
 	}
 
 }

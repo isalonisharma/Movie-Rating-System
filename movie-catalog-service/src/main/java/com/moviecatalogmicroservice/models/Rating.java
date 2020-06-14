@@ -1,4 +1,4 @@
-package com.ratingdataservice.models;
+package com.moviecatalogmicroservice.models;
 
 public class Rating {
 	private Long id;

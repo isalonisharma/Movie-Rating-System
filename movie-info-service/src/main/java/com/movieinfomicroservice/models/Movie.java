@@ -1,4 +1,4 @@
-package com.movieinfoservice.models;
+package com.movieinfomicroservice.models;
 
 public class Movie {
 	private String id;

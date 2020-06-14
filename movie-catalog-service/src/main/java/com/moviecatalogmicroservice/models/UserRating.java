@@ -1,9 +1,9 @@
-package com.ratingdataservice.models;
+package com.moviecatalogmicroservice.models;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class UserRating {
+
     private String userId;
     private List<Rating> ratings;
 
@@ -23,11 +23,4 @@ public class UserRating {
         this.ratings = ratings;
     }
 
-    public void initData(String userId) {
-        this.setUserId(userId);
-        this.setRatings(Arrays.asList(
-                new Rating(1L,"550", 5),
-                new Rating(2L,"567", 4)
-        ));
-    }
 }

@@ -1,4 +1,4 @@
-package com.moviecatalogservice.models;
+package com.moviecatalogmicroservice.models;
 
 public class Catalog {
 	private String movieName;
