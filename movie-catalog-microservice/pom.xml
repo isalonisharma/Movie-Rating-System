@@ -8,11 +8,11 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.moviecatalogservice</groupId>
-	<artifactId>Movie-Catalog-Service</artifactId>
+	<groupId>com.moviecatalogmicroservice</groupId>
+	<artifactId>Movie-Catalog-MicroService</artifactId>
 	<version>0.0.1</version>
-	<name>movie-catalog-service</name>
-	<description>Movie Catalog Service</description>
+	<name>movie-catalog-microservice</name>
+	<description>Movie Catalog Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>

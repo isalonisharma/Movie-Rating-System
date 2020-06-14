@@ -8,11 +8,11 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ratingdataservice</groupId>
-	<artifactId>rating-data-service</artifactId>
+	<groupId>com.ratingdatamicroservice</groupId>
+	<artifactId>Rating-Data-Microservice</artifactId>
 	<version>0.0.1</version>
-	<name>rating-data-service</name>
-	<description>Rating Data Service</description>
+	<name>rating-data-microservice</name>
+	<description>Rating Data Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>
