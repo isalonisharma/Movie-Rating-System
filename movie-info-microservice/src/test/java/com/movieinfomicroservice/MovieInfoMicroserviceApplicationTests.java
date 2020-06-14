@@ -1,10 +1,10 @@
-package com.movieinfoservice;
+package com.movieinfomicroservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MovieInfoServiceApplicationTests {
+class MovieInfoMicroserviceApplicationTests {
 
 	@Test
 	void contextLoads() {

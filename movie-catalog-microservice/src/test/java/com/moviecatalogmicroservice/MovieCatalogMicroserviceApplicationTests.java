@@ -1,10 +1,10 @@
-package com.ratingdataservice;
+package com.moviecatalogmicroservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RatingDataServiceApplicationTests {
+class MovieCatalogMicroserviceApplicationTests {
 
 	@Test
 	void contextLoads() {
