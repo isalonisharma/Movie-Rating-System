@@ -3,10 +3,10 @@ package com.moviecatalogmicroservice.models;
 public class Rating {
 	private Long id;
 	private String movieId;
-    private Integer rating;
-	
-    public Rating() {
-		
+	private Integer rating;
+
+	public Rating() {
+
 	}
 
 	public Rating(Long id, String movieId, Integer rating) {

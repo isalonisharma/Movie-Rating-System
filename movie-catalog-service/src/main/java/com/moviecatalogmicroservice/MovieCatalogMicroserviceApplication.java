@@ -17,8 +17,7 @@ public class MovieCatalogMicroserviceApplication {
 	@LoadBalanced
 	@Bean // producer
 	public RestTemplate getRestTemplate() {
-		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = 
-				new HttpComponentsClientHttpRequestFactory();
+		HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
 		clientHttpRequestFactory.setConnectTimeout(3000); // 3 seconds
 		return new RestTemplate(clientHttpRequestFactory);
 	}

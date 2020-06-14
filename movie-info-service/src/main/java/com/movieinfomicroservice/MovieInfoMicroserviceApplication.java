@@ -10,11 +10,11 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class MovieInfoMicroserviceApplication {
 
-	@Bean //producer
+	@Bean // producer
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(MovieInfoMicroserviceApplication.class, args);
 	}
