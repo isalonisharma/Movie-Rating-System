@@ -10,13 +10,20 @@ import com.moviecatalogmicroservice.models.Rating;
 import com.moviecatalogmicroservice.models.UserRating;
 import com.moviecatalogmicroservice.services.RatingDataService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 @Service
 public class RatingDataServiceImpl implements RatingDataService {
 	@Autowired // consumer
 	private RestTemplate restTemplate;
 
-	@HystrixCommand(fallbackMethod = "getFallbackUserRating")
+	@HystrixCommand(
+            fallbackMethod = "getFallbackUserRating",
+            threadPoolKey = "ratingDataPool",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "20"), // no of concurrent threads allowed
+                    @HystrixProperty(name = "maxQueueSize", value = "10") // how many requests can be in queue
+            })
 	@Override
 	public UserRating getUserRating(String userId) {
 		// get all rated movie id rating's of user
