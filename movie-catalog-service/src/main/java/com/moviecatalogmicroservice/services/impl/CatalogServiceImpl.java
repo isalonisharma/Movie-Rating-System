@@ -38,7 +38,7 @@ public class CatalogServiceImpl implements CatalogService {
 			Movie movie = movieInfoService.getMovie(movieId);
 
 			// 3. put them all together
-			return new Catalog(movie.getName(), movie.getDescription(), rating.getRating());
+			return new Catalog(movieId, movie.getName(), movie.getDescription(), rating.getRating());
 
 		}).collect(Collectors.toList());
 	}

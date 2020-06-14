@@ -1,6 +1,7 @@
 package com.moviecatalogmicroservice.models;
 
 public class Catalog {
+	private String movieId;
 	private String movieName;
 	private String movieDescription;
 	private Integer movieRating;
@@ -9,11 +10,20 @@ public class Catalog {
 
 	}
 
-	public Catalog(String movieName, String movieDescription, Integer movieRating) {
+	public Catalog(String movieId, String movieName, String movieDescription, Integer movieRating) {
 		super();
+		this.movieId = movieId;
 		this.movieName = movieName;
 		this.movieDescription = movieDescription;
 		this.movieRating = movieRating;
+	}
+
+	public String getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(String movieId) {
+		this.movieId = movieId;
 	}
 
 	public String getMovieName() {
@@ -42,7 +52,7 @@ public class Catalog {
 
 	@Override
 	public String toString() {
-		return "Catalog [movieName=" + movieName + ", movieDescription=" + movieDescription + ", movieRating="
-				+ movieRating + "]";
+		return "Catalog [movieId=" + movieId + ", movieName=" + movieName + ", movieDescription=" + movieDescription
+				+ ", movieRating=" + movieRating + "]";
 	}
 }
