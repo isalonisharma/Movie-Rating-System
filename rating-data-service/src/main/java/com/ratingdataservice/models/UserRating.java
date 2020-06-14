@@ -26,8 +26,8 @@ public class UserRating {
     public void initData(String userId) {
         this.setUserId(userId);
         this.setRatings(Arrays.asList(
-                new Rating("550", 5),
-                new Rating("567", 4)
+                new Rating(1L,"550", 5),
+                new Rating(2L,"567", 4)
         ));
     }
 }

@@ -29,15 +29,16 @@ public class CatalogResource {
 				UserRating.class);
 
 		List<Rating> ratings = userRating.getRatings();
-		
+
 		return ratings.stream().map(rating -> {
-			
+
 			// 2. for each movie id, call movie info service to get movie details
-			Movie movie = restTemplate.getForObject("http://movie-info-service/movie/" + rating.getId(), Movie.class);
-			
+			Movie movie = restTemplate.getForObject("http://movie-info-service/movie/" + rating.getMovieId(),
+					Movie.class);
+
 			// 3. put them all together
 			return new Catalog(movie.getName(), movie.getDescription(), rating.getRating());
-			
+
 		}).collect(Collectors.toList());
 	}
 }
