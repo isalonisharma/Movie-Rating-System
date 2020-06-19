@@ -27,7 +27,7 @@ public class RatingDataServiceImpl implements RatingDataService {
 	@Override
 	public UserRating getUserRating(String userId) {
 		// get all rated movie id rating's of user
-		UserRating userRating = restTemplate.getForObject("http://rating-data-microservice/ratings/user/" + userId,
+		UserRating userRating = restTemplate.getForObject("http://rating-data-microservice/ratings/users/" + userId,
 				UserRating.class);
 		return userRating;
 	}

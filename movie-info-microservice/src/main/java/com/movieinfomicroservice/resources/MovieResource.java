@@ -9,7 +9,7 @@ import com.movieinfomicroservice.models.Movie;
 import com.movieinfomicroservice.services.MovieInfoService;
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/movies")
 public class MovieResource {
 
 	@Autowired
