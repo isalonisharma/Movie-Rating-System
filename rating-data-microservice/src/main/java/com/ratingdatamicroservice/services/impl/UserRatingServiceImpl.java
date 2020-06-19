@@ -1,8 +1,11 @@
 package com.ratingdatamicroservice.services.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.ratingdatamicroservice.models.UserRating;
 import com.ratingdatamicroservice.services.UserRatingService;
 
+@Service
 public class UserRatingServiceImpl implements UserRatingService{
 	
 	@Override
