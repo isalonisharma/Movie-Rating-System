@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ratingdatamicroservice.models.Rating;
-import com.ratingdatamicroservice.services.RatingDataService;
+import com.ratingdatamicroservice.services.MovieRatingService;
 
 @RestController
 @RequestMapping("/ratings/movies")
 public class MovieRatingResource {
 
 	@Autowired
-	private RatingDataService ratingDataService;
+	private MovieRatingService movieRatingService;
 
 	@GetMapping(path = "/{movieId}")
 	public Rating getMovieRating(@PathVariable("movieId") String movieId) {
-		Rating rating = ratingDataService.getMovieRating(movieId);
+		Rating rating = movieRatingService.getMovieRating(movieId);
 		return rating;
 	}
 }

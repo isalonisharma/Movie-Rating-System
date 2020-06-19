@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ratingdatamicroservice.models.UserRating;
-import com.ratingdatamicroservice.services.RatingDataService;
+import com.ratingdatamicroservice.services.UserRatingService;
 
 @RestController
 @RequestMapping("/ratings/users")
 public class UserRatingResource {
 
 	@Autowired
-	private RatingDataService ratingDataService;
+	private UserRatingService userRatingService;
 
 	@GetMapping(path = "/{userId}")
 	public UserRating getUserRatings(@PathVariable("userId") String userId) {
-		UserRating userRatings = ratingDataService.getUserRatings(userId);
+		UserRating userRatings = userRatingService.getUserRatings(userId);
 		return userRatings;
 	}
 }
