@@ -1,8 +1,8 @@
 package com.ratingdatamicroservice.services;
 
 import com.ratingdatamicroservice.models.Rating;
-import com.ratingdatamicroservice.models.response.RatingResponse;
-import com.ratingdatamicroservice.models.response.UserRatingResponse;
+import com.ratingdatamicroservice.models.responses.RatingResponse;
+import com.ratingdatamicroservice.models.responses.UserRatingResponse;
 
 public interface RatingService {
 	Rating getMovieRating(String movieId);

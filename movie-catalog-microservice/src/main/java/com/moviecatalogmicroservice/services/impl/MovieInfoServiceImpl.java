@@ -25,7 +25,7 @@ public class MovieInfoServiceImpl implements MovieInfoService {
 	@Override
 	public Movie getMovie(String movieId) {
 		// for movie id, call movie info service to get movie details
-		Movie movie = restTemplate.getForObject("http://movie-info-microservice/movies/" + movieId, Movie.class);
+		Movie movie = restTemplate.getForObject("http://movie-information-microservice/movies/" + movieId, Movie.class);
 		return movie;
 	}
 

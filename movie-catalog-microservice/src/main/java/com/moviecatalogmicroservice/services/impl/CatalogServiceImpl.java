@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.moviecatalogmicroservice.models.Catalog;
 import com.moviecatalogmicroservice.models.Movie;
-import com.moviecatalogmicroservice.models.response.RatingResponse;
-import com.moviecatalogmicroservice.models.response.UserRatingResponse;
+import com.moviecatalogmicroservice.models.responses.RatingResponse;
+import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 import com.moviecatalogmicroservice.services.CatalogService;
 import com.moviecatalogmicroservice.services.MovieInfoService;
 import com.moviecatalogmicroservice.services.RatingDataService;

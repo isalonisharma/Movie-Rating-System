@@ -3,8 +3,8 @@ package com.ratingdatamicroservice.services.impl;
 import org.springframework.stereotype.Service;
 
 import com.ratingdatamicroservice.models.Rating;
-import com.ratingdatamicroservice.models.response.RatingResponse;
-import com.ratingdatamicroservice.models.response.UserRatingResponse;
+import com.ratingdatamicroservice.models.responses.RatingResponse;
+import com.ratingdatamicroservice.models.responses.UserRatingResponse;
 import com.ratingdatamicroservice.services.RatingService;
 
 @Service

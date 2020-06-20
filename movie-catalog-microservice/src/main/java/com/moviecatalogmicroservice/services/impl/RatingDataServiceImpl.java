@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.moviecatalogmicroservice.models.response.RatingResponse;
-import com.moviecatalogmicroservice.models.response.UserRatingResponse;
+import com.moviecatalogmicroservice.models.responses.RatingResponse;
+import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 import com.moviecatalogmicroservice.services.RatingDataService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
