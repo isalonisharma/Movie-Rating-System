@@ -1,27 +1,17 @@
-package com.moviecatalogmicroservice.models;
+package com.moviecatalogmicroservice.beans;
 
-public class Rating {
-	private Long id;
+public class RatingResponse {
 	private String movieId;
 	private Integer rating;
-
-	public Rating() {
-
+	
+	public RatingResponse() {
+		super();
 	}
 
-	public Rating(Long id, String movieId, Integer rating) {
+	public RatingResponse(String movieId, Integer rating) {
 		super();
-		this.id = id;
 		this.movieId = movieId;
 		this.rating = rating;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getMovieId() {
@@ -42,6 +32,6 @@ public class Rating {
 
 	@Override
 	public String toString() {
-		return "Rating [id=" + id + ", movieId=" + movieId + ", rating=" + rating + "]";
+		return "RatingResponseBean [movieId=" + movieId + ", rating=" + rating + "]";
 	}
 }
