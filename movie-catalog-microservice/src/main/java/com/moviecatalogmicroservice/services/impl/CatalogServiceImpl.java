@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.moviecatalogmicroservice.models.Catalog;
 import com.moviecatalogmicroservice.models.Movie;
-import com.moviecatalogmicroservice.models.Rating;
-import com.moviecatalogmicroservice.models.UserRating;
+import com.moviecatalogmicroservice.models.responses.RatingResponse;
+import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 import com.moviecatalogmicroservice.services.CatalogService;
 import com.moviecatalogmicroservice.services.MovieInfoService;
 import com.moviecatalogmicroservice.services.RatingDataService;
@@ -26,19 +26,19 @@ public class CatalogServiceImpl implements CatalogService {
 	@Override
 	public List<Catalog> getCatalogItem(String userId) {
 		// 1. get all rated movie id's
-		UserRating userRating = ratingDataService.getUserRating(userId);
+		UserRatingResponse userRatingResponse = ratingDataService.getUserRating(userId);
 
-		List<Rating> ratings = userRating.getRatings();
+		List<RatingResponse> listRatingResponse = userRatingResponse.getListRatingResponse();
 
-		return ratings.stream().map(rating -> {
+		return listRatingResponse.stream().map(ratingResponse -> {
 
-			String movieId = rating.getMovieId();
+			String movieId = ratingResponse.getMovieId();
 
 			// 2. for each movie id, call movie info service to get movie details
 			Movie movie = movieInfoService.getMovie(movieId);
 
 			// 3. put them all together
-			return new Catalog(movieId, movie.getName(), movie.getDescription(), rating.getRating());
+			return new Catalog(movieId, movie.getName(), movie.getDescription(), ratingResponse.getRating());
 
 		}).collect(Collectors.toList());
 	}

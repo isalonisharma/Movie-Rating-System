@@ -9,11 +9,11 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.movieinfomicroservice</groupId>
-	<artifactId>Movie-Info-Microservice</artifactId>
+	<groupId>com.movieinformationmicroservice</groupId>
+	<artifactId>movie-information-microservice</artifactId>
 	<version>0.0.1</version>
-	<name>movie-info-microservice</name>
-	<description>Movie Info Microservice</description>
+	<name>movie-information-microservice</name>
+	<description>movie information microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -1,8 +1,7 @@
 package com.moviecatalogmicroservice.services;
 
-import com.moviecatalogmicroservice.models.UserRating;
+import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 
 public interface RatingDataService {
-
-	UserRating getUserRating(String userId);
+	UserRatingResponse getUserRating(String userId);
 }

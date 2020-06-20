@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.discoveryserver</groupId>
-	<artifactId>Discovery-Server</artifactId>
+	<artifactId>discovery-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Discovery-Server</name>
-	<description>Eureka Discovery Server</description>
+	<name>discovery-server</name>
+	<description>eureka discovery server</description>
 
 	<properties>
 		<java.version>1.8</java.version>

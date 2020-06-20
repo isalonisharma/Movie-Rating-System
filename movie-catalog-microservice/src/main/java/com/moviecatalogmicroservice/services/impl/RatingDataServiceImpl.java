@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.moviecatalogmicroservice.models.Rating;
-import com.moviecatalogmicroservice.models.UserRating;
+import com.moviecatalogmicroservice.models.responses.RatingResponse;
+import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 import com.moviecatalogmicroservice.services.RatingDataService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
@@ -25,17 +25,17 @@ public class RatingDataServiceImpl implements RatingDataService {
                     @HystrixProperty(name = "maxQueueSize", value = "10") // how many requests can be in queue
             })
 	@Override
-	public UserRating getUserRating(String userId) {
+	public UserRatingResponse getUserRating(String userId) {
 		// get all rated movie id rating's of user
-		UserRating userRating = restTemplate.getForObject("http://rating-data-microservice/ratings/user/" + userId,
-				UserRating.class);
-		return userRating;
+		UserRatingResponse userRatingResponse = restTemplate.getForObject("http://rating-data-microservice/ratings/users/" + userId,
+				UserRatingResponse.class);
+		return userRatingResponse;
 	}
 
-	public UserRating getFallbackUserRating(String userId) {
-		UserRating userRating = new UserRating();
+	public UserRatingResponse getFallbackUserRating(String userId) {
+		UserRatingResponse userRating = new UserRatingResponse();
 		userRating.setUserId(userId);
-		userRating.setRatings(Arrays.asList(new Rating(1L, "0", 0)));
+		userRating.setListRatingResponse(Arrays.asList(new RatingResponse("0", 0)));
 		return userRating;
 	}
 }
