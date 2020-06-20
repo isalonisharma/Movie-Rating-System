@@ -1,4 +1,4 @@
-package com.moviecatalogmicroservice.beans;
+package com.moviecatalogmicroservice.models.response;
 
 import java.util.List;
 

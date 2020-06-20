@@ -1,4 +1,4 @@
-package com.ratingdatamicroservice.beans;
+package com.ratingdatamicroservice.models.response;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,6 +6,16 @@ import java.util.List;
 public class UserRatingResponse {
 	private String userId;
 	private List<RatingResponse> listRatingResponse;
+
+	public UserRatingResponse() {
+		super();
+	}
+
+	public UserRatingResponse(String userId, List<RatingResponse> listRatingResponse) {
+		super();
+		this.userId = userId;
+		this.listRatingResponse = listRatingResponse;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -21,6 +31,11 @@ public class UserRatingResponse {
 
 	public void setListRatingResponse(List<RatingResponse> listRatingResponse) {
 		this.listRatingResponse = listRatingResponse;
+	}
+
+	@Override
+	public String toString() {
+		return "UserRatingResponse [userId=" + userId + ", listRatingResponse=" + listRatingResponse + "]";
 	}
 
 	public void initData(String userId) {

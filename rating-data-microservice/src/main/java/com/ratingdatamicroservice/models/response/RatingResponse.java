@@ -1,4 +1,4 @@
-package com.ratingdatamicroservice.beans;
+package com.ratingdatamicroservice.models.response;
 
 public class RatingResponse {
 	private String movieId;
@@ -32,6 +32,6 @@ public class RatingResponse {
 
 	@Override
 	public String toString() {
-		return "RatingResponseBean [movieId=" + movieId + ", rating=" + rating + "]";
+		return "RatingResponse [movieId=" + movieId + ", rating=" + rating + "]";
 	}
 }

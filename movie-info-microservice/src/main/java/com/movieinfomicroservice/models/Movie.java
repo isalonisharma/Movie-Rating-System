@@ -6,7 +6,7 @@ public class Movie {
 	private String description;
 
 	public Movie() {
-
+		super();
 	}
 
 	public Movie(String id, String name, String description) {

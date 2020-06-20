@@ -1,8 +1,8 @@
 package com.ratingdatamicroservice.services;
 
-import com.ratingdatamicroservice.beans.RatingResponse;
-import com.ratingdatamicroservice.beans.UserRatingResponse;
 import com.ratingdatamicroservice.models.Rating;
+import com.ratingdatamicroservice.models.response.RatingResponse;
+import com.ratingdatamicroservice.models.response.UserRatingResponse;
 
 public interface RatingService {
 	Rating getMovieRating(String movieId);
@@ -12,4 +12,6 @@ public interface RatingService {
 	RatingResponse convertToRatingResponse(Rating rating);
 	
 	UserRatingResponse getUserRatings(String userId);
+
+	Rating updateMovieRating(Rating rating);
 }

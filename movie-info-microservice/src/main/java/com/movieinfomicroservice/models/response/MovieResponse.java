@@ -1,9 +1,20 @@
-package com.movieinfomicroservice.models;
+package com.movieinfomicroservice.models.response;
 
-public class MovieSummary {
+public class MovieResponse {
 	private String id;
 	private String title;
 	private String overview;
+
+	public MovieResponse() {
+		super();
+	}
+
+	public MovieResponse(String id, String title, String overview) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.overview = overview;
+	}
 
 	public String getId() {
 		return id;
@@ -31,6 +42,6 @@ public class MovieSummary {
 
 	@Override
 	public String toString() {
-		return "MovieSummary [id=" + id + ", title=" + title + ", overview=" + overview + "]";
+		return "MovieResponse [id=" + id + ", title=" + title + ", overview=" + overview + "]";
 	}
 }

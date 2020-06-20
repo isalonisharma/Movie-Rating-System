@@ -1,6 +1,9 @@
 package com.ratingdatamicroservice.resources;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ratingdatamicroservice.beans.RatingResponse;
-import com.ratingdatamicroservice.beans.UserRatingResponse;
 import com.ratingdatamicroservice.models.Rating;
+import com.ratingdatamicroservice.models.response.RatingResponse;
+import com.ratingdatamicroservice.models.response.UserRatingResponse;
 import com.ratingdatamicroservice.services.RatingService;
 
 @RestController
@@ -28,11 +31,19 @@ public class RatingResource {
 	}
 	
 	@PostMapping(path = "/movies")
-	public RatingResponse createMovieRating(@RequestBody Rating rating) {
+	public RatingResponse createMovieRating(@Valid @RequestBody Rating rating) {
 		Rating saveRating = ratingService.createMovieRating(rating);
 		RatingResponse ratingResponse = ratingService.convertToRatingResponse(saveRating);
 		return ratingResponse;
 	}
+	
+	@PostMapping(path = "/movies/{movieId}")
+	public RatingResponse updateMovieRating(@Valid @RequestBody Rating rating) {
+		Rating saveRating = ratingService.updateMovieRating(rating);
+		RatingResponse ratingResponse = ratingService.convertToRatingResponse(saveRating);
+		return ratingResponse;
+	}
+	
 	
 	@GetMapping(path = "users/{userId}")
 	public UserRatingResponse getUserRatings(@PathVariable("userId") String userId) {

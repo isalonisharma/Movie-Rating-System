@@ -2,9 +2,9 @@ package com.ratingdatamicroservice.services.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.ratingdatamicroservice.beans.RatingResponse;
-import com.ratingdatamicroservice.beans.UserRatingResponse;
 import com.ratingdatamicroservice.models.Rating;
+import com.ratingdatamicroservice.models.response.RatingResponse;
+import com.ratingdatamicroservice.models.response.UserRatingResponse;
 import com.ratingdatamicroservice.services.RatingService;
 
 @Service
@@ -32,5 +32,11 @@ public class RatingServiceImpl implements RatingService {
 		UserRatingResponse userRatings = new UserRatingResponse();
 		userRatings.initData(userId);
 		return userRatings;
+	}
+
+	@Override
+	public Rating updateMovieRating(Rating rating) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

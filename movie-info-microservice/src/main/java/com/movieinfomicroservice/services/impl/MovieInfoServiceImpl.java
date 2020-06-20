@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.movieinfomicroservice.models.Movie;
-import com.movieinfomicroservice.models.MovieSummary;
+import com.movieinfomicroservice.models.response.MovieResponse;
 import com.movieinfomicroservice.services.MovieInfoService;
 
 @Service
@@ -20,10 +20,10 @@ public class MovieInfoServiceImpl implements MovieInfoService {
 	@Override
 	public Movie getMovie(String movieId) {
 		// get movie info
-		MovieSummary movieSummary = restTemplate.getForObject(
-				"https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey, MovieSummary.class);
+		MovieResponse movieResponse = restTemplate.getForObject(
+				"https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey, MovieResponse.class);
 
-		return new Movie(movieId, movieSummary.getTitle(), movieSummary.getOverview());
+		return new Movie(movieId, movieResponse.getTitle(), movieResponse.getOverview());
 	}
 
 }
