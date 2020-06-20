@@ -1,18 +1,10 @@
 package com.ratingdatamicroservice.models;
 
-import javax.validation.constraints.NotNull;
-
 public class Rating {
 	
 	private Long id;
-	
-	@NotNull(message = "userId is required")
 	private Long userId;
-	
-	@NotNull(message = "movieId is required")
 	private String movieId;
-	
-	@NotNull(message = "rating is required")
 	private Integer rating;
 
 	public Rating() {

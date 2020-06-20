@@ -1,7 +1,5 @@
 package com.ratingdatamicroservice.controllers;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,14 +28,14 @@ public class RatingController {
 	}
 	
 	@PostMapping(path = "/movies")
-	public RatingResponse createMovieRating(@Valid @RequestBody Rating rating) {
+	public RatingResponse createMovieRating(@RequestBody Rating rating) {
 		Rating saveRating = ratingService.createMovieRating(rating);
 		RatingResponse ratingResponse = ratingService.convertToRatingResponse(saveRating);
 		return ratingResponse;
 	}
 	
 	@PostMapping(path = "/movies/{movieId}")
-	public RatingResponse updateMovieRating(@Valid @RequestBody Rating rating) {
+	public RatingResponse updateMovieRating(@RequestBody Rating rating) {
 		Rating saveRating = ratingService.updateMovieRating(rating);
 		RatingResponse ratingResponse = ratingService.convertToRatingResponse(saveRating);
 		return ratingResponse;
