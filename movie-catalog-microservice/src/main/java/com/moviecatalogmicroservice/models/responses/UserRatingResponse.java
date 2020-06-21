@@ -1,5 +1,6 @@
 package com.moviecatalogmicroservice.models.responses;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class UserRatingResponse {
@@ -20,5 +21,10 @@ public class UserRatingResponse {
 
 	public void setListRatingResponse(List<RatingResponse> listRatingResponse) {
 		this.listRatingResponse = listRatingResponse;
+	}
+	
+	public void initData(String userId) {
+		this.setUserId(userId);
+		this.setListRatingResponse(Arrays.asList(new RatingResponse("550", 5), new RatingResponse("567", 4)));
 	}
 }
