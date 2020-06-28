@@ -18,17 +18,16 @@ import com.usermicroservice.services.UserService;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AuthenticationUserService authenticationUserService;
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	private Environment environment;
 
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
 	@Autowired
-	public SecurityConfiguration(Environment environment, BCryptPasswordEncoder bCryptPasswordEncoder)
-	{
+	public SecurityConfiguration(Environment environment, BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.environment = environment;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
@@ -37,14 +36,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		String gatewayIp = environment.getProperty("gateway.ip");
 		httpSecurity.csrf().disable();
-		httpSecurity.authorizeRequests().antMatchers("/**").hasIpAddress(gatewayIp)
-		.and()
-		.addFilter(getAuthenticationFilter());
+		httpSecurity.authorizeRequests().antMatchers("/**").hasIpAddress(gatewayIp).and()
+				.addFilter(getAuthenticationFilter());
 	}
 
 	private AuthenticationFilter getAuthenticationFilter() throws Exception {
 		String authenticationURLPath = environment.getProperty("login.url.path");
-		AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager(),environment,userService);
+		AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager(), environment,
+				userService);
 		authenticationFilter.setFilterProcessesUrl(authenticationURLPath);
 		return authenticationFilter;
 	}
