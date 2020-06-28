@@ -16,7 +16,7 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	UserRepository userRepository;
 
-	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public UserDTO createUser(CreateUserRequest createUserRequest) {
