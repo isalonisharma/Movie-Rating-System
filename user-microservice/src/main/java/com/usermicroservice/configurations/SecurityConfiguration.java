@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	}
 
 	private AuthenticationFilter getAuthenticationFilter() throws Exception {
-		String authenticationURLPath = environment.getProperty("login.url.path");
+		String authenticationURLPath = environment.getProperty("authentication.url.path");
 		AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager(), environment,
 				userService);
 		authenticationFilter.setFilterProcessesUrl(authenticationURLPath);
