@@ -1,9 +1,13 @@
 package com.usermicroservice.models.responses;
 
+import java.io.Serializable;
+
 import com.usermicroservice.models.DTO.UserDTO;
 
-public class UserResponse {
+public class UserResponse implements Serializable{
 
+	private static final long serialVersionUID = -2990740838429789561L;
+	
 	private Long id;
 	private String firstName;
 	private String lastName;

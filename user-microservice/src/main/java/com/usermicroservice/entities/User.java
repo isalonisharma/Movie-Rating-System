@@ -1,4 +1,4 @@
-package com.usermicroservice.models;
+package com.usermicroservice.entities;
 
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "user")
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1648473125680448662L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

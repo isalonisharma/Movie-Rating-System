@@ -1,10 +1,14 @@
 package com.usermicroservice.models.requests;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class CreateUserRequest {
+public class CreateUserRequest implements Serializable {
+
+	private static final long serialVersionUID = 2791142098137213447L;
 
 	@NotNull(message = "First name cannot be null")
 	@Size(min = 2, message = "First name must not be less than two characters")
@@ -21,6 +25,10 @@ public class CreateUserRequest {
 	@NotNull(message = "Username cannot be null")
 	@Email
 	private String username;
+
+	public CreateUserRequest() {
+		super();
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -52,5 +60,11 @@ public class CreateUserRequest {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	@Override
+	public String toString() {
+		return "CreateUserRequest [firstName=" + firstName + ", lastName=" + lastName + ", password=" + password
+				+ ", username=" + username + "]";
 	}
 }

@@ -5,8 +5,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.usermicroservice.dao.UserDao;
+import com.usermicroservice.entities.User;
 import com.usermicroservice.exceptions.UserNotFoundException;
-import com.usermicroservice.models.User;
 import com.usermicroservice.models.DTO.UserDTO;
 import com.usermicroservice.models.requests.CreateUserRequest;
 import com.usermicroservice.repository.UserRepository;

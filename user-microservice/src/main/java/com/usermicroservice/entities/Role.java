@@ -1,4 +1,6 @@
-package com.usermicroservice.models;
+package com.usermicroservice.entities;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,9 +11,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "role")
-public class Role implements java.io.Serializable {
-	private static final long serialVersionUID = 1L;
+public class Role implements Serializable {
 	
+	private static final long serialVersionUID = 7749830260395493792L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -20,7 +23,7 @@ public class Role implements java.io.Serializable {
 	private String name;
 	
 	public Role() {
-		
+		super();
 	}
 	
 	public Role(long id, String name) {

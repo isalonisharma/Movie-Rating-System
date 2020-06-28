@@ -2,7 +2,7 @@ package com.usermicroservice.models.DTO;
 
 import java.io.Serializable;
 
-import com.usermicroservice.models.User;
+import com.usermicroservice.entities.User;
 
 public class UserDTO implements Serializable {
 
