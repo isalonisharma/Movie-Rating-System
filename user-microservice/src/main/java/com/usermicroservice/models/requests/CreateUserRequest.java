@@ -18,9 +18,9 @@ public class CreateUserRequest {
 	@Size(min = 8, max = 16, message = "Password must be equal or grater than 8 characters and less than 16 characters")
 	private String password;
 
-	@NotNull(message = "Email cannot be null")
+	@NotNull(message = "Username cannot be null")
 	@Email
-	private String email;
+	private String username;
 
 	public String getFirstName() {
 		return firstName;
@@ -46,11 +46,11 @@ public class CreateUserRequest {
 		this.password = password;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }

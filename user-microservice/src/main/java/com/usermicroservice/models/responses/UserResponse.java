@@ -7,26 +7,26 @@ public class UserResponse {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String email;
+	private String username;
 
 	public UserResponse() {
 		super();
 	}
-
-	public UserResponse(Long id, String firstName, String lastName, String email) {
+	
+	public UserResponse(Long id, String firstName, String lastName, String username) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.username = username;
 	}
-	
+
 	public UserResponse(UserDTO userDTO) {
 		super();
 		this.id = userDTO.getId();
 		this.firstName = userDTO.getFirstName();
 		this.lastName = userDTO.getLastName();
-		this.email = userDTO.getEmail();
+		this.username = userDTO.getUsername();
 	}
 
 	public Long getId() {
@@ -53,11 +53,17 @@ public class UserResponse {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	@Override
+	public String toString() {
+		return "UserResponse [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username="
+				+ username + "]";
 	}
 }
