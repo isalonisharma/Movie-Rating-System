@@ -2,7 +2,7 @@ package com.usermicroservice.models.DTO;
 
 import java.io.Serializable;
 
-import com.usermicroservice.models.User;
+import com.usermicroservice.entities.User;
 
 public class UserDTO implements Serializable {
 
@@ -11,20 +11,22 @@ public class UserDTO implements Serializable {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String email;
+	private String username;
 	private String password;
+	private boolean active;
 
 	public UserDTO() {
 		super();
 	}
 
-	public UserDTO(Long id, String firstName, String lastName, String email, String password) {
+	public UserDTO(Long id, String firstName, String lastName, String username, String password, boolean active) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.username = username;
 		this.password = password;
+		this.active = active;
 	}
 
 	public UserDTO(User user) {
@@ -32,10 +34,11 @@ public class UserDTO implements Serializable {
 		this.id = user.getId();
 		this.firstName = user.getFirstName();
 		this.lastName = user.getLastName();
-		this.email = user.getEmail();
+		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.active = user.isActive();
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -60,12 +63,12 @@ public class UserDTO implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -76,9 +79,17 @@ public class UserDTO implements Serializable {
 		this.password = password;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
-		return "UserDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", password=" + password + "]";
+		return "UserDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", password=" + password + ", active=" + active + "]";
 	}
 }

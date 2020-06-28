@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO getUserByEmail(String email) throws UserNotFoundException {
-		return userDao.getUserByEmail(email);
+	public UserDTO getUserByUsername(String username) throws UserNotFoundException {
+		return userDao.getUserByUsername(username);
 	}
 
 	@Override

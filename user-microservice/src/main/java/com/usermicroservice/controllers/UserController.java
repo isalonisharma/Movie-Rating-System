@@ -20,7 +20,6 @@ import com.usermicroservice.services.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
 	@Autowired
 	UserService userService;
 
@@ -30,7 +29,6 @@ public class UserController {
 
 		UserDTO userDTO = userService.createUser(createUserRequest);
 		UserResponse userResponse = new UserResponse(userDTO);
-
 		return ResponseEntity.status(HttpStatus.CREATED).body(userResponse);
 	}
 
@@ -39,7 +37,6 @@ public class UserController {
 
 		UserDTO userDTO = userService.getUserById(id);
 		UserResponse userResponse = new UserResponse(userDTO);
-
 		return ResponseEntity.status(HttpStatus.OK).body(userResponse);
 	}
 }

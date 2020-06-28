@@ -1,4 +1,4 @@
-package com.usermicroservice.models;
+package com.usermicroservice.entities;
 
 import java.io.Serializable;
 
@@ -15,37 +15,42 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "user")
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1648473125680448662L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "first_name",nullable = false)
+	@Column(name = "first_name", nullable = false)
 	private String firstName;
 
-	@Column(name = "last_name",nullable = false)
+	@Column(name = "last_name", nullable = false)
 	private String lastName;
 
 	@NotBlank
 	@Email
-	@Column(name = "email",nullable = false)
-	private String email;
+	@Column(name = "username", nullable = false)
+	private String username;
 
 	@NotBlank
-	@Column(name = "password",nullable = false)
+	@Column(name = "password", nullable = false)
 	private String password;
+
+	@Column(name = "active", nullable = false)
+	private boolean active;
 
 	public User() {
 		super();
 	}
 
-	public User(String firstName, String lastName, String email, String password) {
+	public User(String firstName, String lastName, @NotBlank @Email String username, 
+			@NotBlank String password, boolean active) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.username = username;
 		this.password = password;
+		this.active = active;
 	}
 
 	public Long getId() {
@@ -72,12 +77,12 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -88,9 +93,17 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", password=" + password + "]";
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", password=" + password + ", active=" + active + "]";
 	}
 }
