@@ -24,7 +24,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
     	httpSecurity.csrf().disable(); 
-    	httpSecurity.headers().frameOptions().disable();
     	httpSecurity.authorizeRequests()
     	.antMatchers(environment.getProperty("api.users.actuator.url.path")).permitAll()
     	.antMatchers(environment.getProperty("api.zuul.actuator.url.path")).permitAll()
