@@ -9,12 +9,14 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @SpringBootApplication
 public class MovieInformationMicroserviceApplication {
+
 	@Bean // producer
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(MovieInformationMicroserviceApplication.class, args);
 	}
+
 }

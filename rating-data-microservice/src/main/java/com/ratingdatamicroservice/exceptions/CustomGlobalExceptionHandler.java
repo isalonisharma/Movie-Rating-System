@@ -22,5 +22,6 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
        }
        ErrorResponse errorResponse = new ErrorResponse(new Date(),errorMessage);
        return new ResponseEntity<>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
-    }	
+    }
+	
 }

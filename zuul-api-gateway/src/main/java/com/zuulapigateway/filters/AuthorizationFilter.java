@@ -28,39 +28,30 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
 			FilterChain filterChain) throws IOException, ServletException {
-		
 		String authorizationHeader = httpServletRequest
 				.getHeader(environment.getProperty("authorization.token.header.name"));
-		
 		if (authorizationHeader == null
 				|| !authorizationHeader.startsWith(environment.getProperty("authorization.token.header.prefix"))) {
 			filterChain.doFilter(httpServletRequest, httpServletResponse);
 			return;
 		}
-		
 		UsernamePasswordAuthenticationToken authentication = getAuthentication(httpServletRequest);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
 		filterChain.doFilter(httpServletRequest, httpServletResponse);
 	}
 
 	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest httpServletRequest) {
-		
 		String authorizationHeader = httpServletRequest
 				.getHeader(environment.getProperty("authorization.token.header.name"));
-		
 		if (authorizationHeader == null) {
 			return null;
 		}
-		
 		String token = authorizationHeader.replace(environment.getProperty("authorization.token.header.prefix"), "");
 		String userId = Jwts.parser().setSigningKey(environment.getProperty("token.secret")).parseClaimsJws(token)
 				.getBody().getSubject();
-		
 		if (userId == null) {
 			return null;
 		}
-		
 		return new UsernamePasswordAuthenticationToken(userId, null, new ArrayList<>());
 	}
 }

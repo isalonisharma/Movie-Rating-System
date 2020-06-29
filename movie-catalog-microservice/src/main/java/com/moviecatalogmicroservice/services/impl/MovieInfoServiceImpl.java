@@ -20,4 +20,5 @@ public class MovieInfoServiceImpl implements MovieInfoService {
 				.getForObject("http://localhost:8081/movie-information-microservice/movies/" + movieId, Movie.class);
 		return movie;
 	}
+
 }
