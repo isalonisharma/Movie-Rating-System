@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
     	httpSecurity.csrf().disable(); 
-    	httpSecurity.headers().frameOptions().disable();
+   
     	httpSecurity.authorizeRequests()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.registration.url.path")).permitAll()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.authentication.url.path")).permitAll()
