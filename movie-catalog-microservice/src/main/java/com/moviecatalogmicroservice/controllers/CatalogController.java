@@ -13,7 +13,6 @@ import com.moviecatalogmicroservice.services.CatalogService;
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
-
 	@Autowired
 	private CatalogService catalogService;
 
@@ -22,5 +21,4 @@ public class CatalogController {
 		List<Catalog> listCatalog = catalogService.getCatalogItem(userId);
 		return listCatalog;
 	}
-
 }

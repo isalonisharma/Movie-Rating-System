@@ -17,7 +17,6 @@ public class RatingServiceImpl implements RatingService {
 
 	@Override
 	public Rating createMovieRating(Rating rating) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -36,7 +35,6 @@ public class RatingServiceImpl implements RatingService {
 
 	@Override
 	public Rating updateMovieRating(Rating rating) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

@@ -22,8 +22,6 @@ public class MovieInfoServiceImpl implements MovieInfoService {
 		// get movie info
 		MovieResponse movieResponse = restTemplate.getForObject(
 				"https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey, MovieResponse.class);
-
 		return new Movie(movieId, movieResponse.getTitle(), movieResponse.getOverview());
 	}
-
 }

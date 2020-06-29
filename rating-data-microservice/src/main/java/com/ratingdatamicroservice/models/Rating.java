@@ -1,7 +1,6 @@
 package com.ratingdatamicroservice.models;
 
 public class Rating {
-	
 	private Long id;
 	private Long userId;
 	private String movieId;

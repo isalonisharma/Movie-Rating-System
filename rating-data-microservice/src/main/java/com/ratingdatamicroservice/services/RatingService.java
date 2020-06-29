@@ -12,6 +12,6 @@ public interface RatingService {
 	RatingResponse convertToRatingResponse(Rating rating);
 	
 	UserRatingResponse getUserRatings(String userId);
-
+	
 	Rating updateMovieRating(Rating rating);
 }
