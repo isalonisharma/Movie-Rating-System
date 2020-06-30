@@ -60,6 +60,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		String username = ((AuthenticationUser) auth.getPrincipal()).getUsername();
 		Date tokenExpiration = new Date(
 				System.currentTimeMillis() + Long.parseLong(environment.getProperty("token.expiration_time")));
+		System.err.println("token_expiration_time: " + environment.getProperty("token.expiration_time"));
 		String tokenSecret = environment.getProperty("token.secret");
 		try {
 			UserDTO userDTO = userService.getUserByUsername(username);
