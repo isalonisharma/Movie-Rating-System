@@ -26,6 +26,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     	httpSecurity.csrf().disable(); 
     	
     	httpSecurity.authorizeRequests()
+    	.antMatchers(environment.getProperty("api.zuul.actuator.url.path")).permitAll()
+    	.antMatchers(environment.getProperty("api.users.actuator.url.path")).permitAll()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.registration.url.path")).permitAll()
     	.antMatchers(HttpMethod.POST, environment.getProperty("api.authentication.url.path")).permitAll()
     	.anyRequest().authenticated()
