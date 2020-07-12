@@ -11,13 +11,12 @@ import com.moviecatalogmicroservice.models.Catalog;
 import com.moviecatalogmicroservice.services.CatalogService;
 
 @RestController
-@RequestMapping("/catalog")
 public class CatalogController {
 
 	@Autowired
 	private CatalogService catalogService;
 
-	@RequestMapping("/{userId}")
+	@RequestMapping("users/{userId}/catalog")
 	public List<Catalog> getCatalogItem(@PathVariable("userId") String userId) {
 		List<Catalog> listCatalog = catalogService.getCatalogItem(userId);
 		return listCatalog;

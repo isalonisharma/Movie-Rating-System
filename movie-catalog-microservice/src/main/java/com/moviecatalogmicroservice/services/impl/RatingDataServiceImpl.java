@@ -16,7 +16,8 @@ public class RatingDataServiceImpl implements RatingDataService {
 	public UserRatingResponse getUserRating(String userId) {
 		// get all rated movie id rating's of user
 		UserRatingResponse userRatingResponse = restTemplate.getForObject(
-				"http://localhost:8081/rating-data-microservice/ratings/users/" + userId, UserRatingResponse.class);
+				"http://localhost:8081/rating-data-microservice/users/" + userId + "/ratings",
+				UserRatingResponse.class);
 		return userRatingResponse;
 	}
 }
