@@ -6,27 +6,27 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.moviecatalogmicroservice.data.MovieInformationClient;
+import com.moviecatalogmicroservice.data.RatingDataClient;
 import com.moviecatalogmicroservice.models.Catalog;
 import com.moviecatalogmicroservice.models.Movie;
 import com.moviecatalogmicroservice.models.responses.RatingResponse;
 import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
 import com.moviecatalogmicroservice.services.CatalogService;
-import com.moviecatalogmicroservice.services.MovieInfoService;
-import com.moviecatalogmicroservice.services.RatingDataService;
 
 @Service
 public class CatalogServiceImpl implements CatalogService {
 
 	@Autowired
-	private MovieInfoService movieInfoService;
-
+	private MovieInformationClient movieInformationClient;
+	
 	@Autowired
-	private RatingDataService ratingDataService;
+	private RatingDataClient ratingDataClient;
 
 	@Override
 	public List<Catalog> getCatalogItem(String userId) {
 		// 1. get all rated movie id's
-		UserRatingResponse userRatingResponse = ratingDataService.getUserRating(userId);
+		UserRatingResponse userRatingResponse = ratingDataClient.getUserRating(userId);
 
 		List<RatingResponse> listRatingResponse = userRatingResponse.getListRatingResponse();
 
@@ -35,7 +35,7 @@ public class CatalogServiceImpl implements CatalogService {
 			String movieId = ratingResponse.getMovieId();
 
 			// 2. for each movie id, call movie info service to get movie details
-			Movie movie = movieInfoService.getMovie(movieId);
+			Movie movie = movieInformationClient.getMovie(movieId);
 
 			// 3. put them all together
 			return new Catalog(movieId, movie.getName(), movie.getDescription(), ratingResponse.getRating());
