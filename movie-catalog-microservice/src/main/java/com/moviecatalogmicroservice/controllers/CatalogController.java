@@ -17,7 +17,7 @@ public class CatalogController {
 	private CatalogService catalogService;
 
 	@RequestMapping("users/{userId}/catalog")
-	public List<Catalog> getCatalogItem(@PathVariable("userId") String userId) {
+	public List<Catalog> getCatalogItem(@PathVariable("userId") Long userId) {
 		List<Catalog> listCatalog = catalogService.getCatalogItem(userId);
 		return listCatalog;
 	}

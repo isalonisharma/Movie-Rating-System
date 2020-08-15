@@ -10,8 +10,8 @@ import com.moviecatalogmicroservice.data.MovieInformationClient;
 import com.moviecatalogmicroservice.data.RatingDataClient;
 import com.moviecatalogmicroservice.models.Catalog;
 import com.moviecatalogmicroservice.models.Movie;
-import com.moviecatalogmicroservice.models.responses.RatingResponse;
-import com.moviecatalogmicroservice.models.responses.UserRatingResponse;
+import com.moviecatalogmicroservice.models.responses.RatingDTO;
+import com.moviecatalogmicroservice.models.responses.UserRating;
 import com.moviecatalogmicroservice.services.CatalogService;
 
 @Service
@@ -24,13 +24,13 @@ public class CatalogServiceImpl implements CatalogService {
 	private RatingDataClient ratingDataClient;
 
 	@Override
-	public List<Catalog> getCatalogItem(String userId) {
+	public List<Catalog> getCatalogItem(Long userId) {
 		// 1. get all rated movie id's
-		UserRatingResponse userRatingResponse = ratingDataClient.getUserRating(userId);
+		UserRating userRating = ratingDataClient.getUserRating(userId);
 
-		List<RatingResponse> listRatingResponse = userRatingResponse.getListRatingResponse();
+		List<RatingDTO> listRatingDTO = userRating.getListRatingDTO();
 
-		return listRatingResponse.stream().map(ratingResponse -> {
+		return listRatingDTO.stream().map(ratingResponse -> {
 
 			String movieId = ratingResponse.getMovieId();
 
