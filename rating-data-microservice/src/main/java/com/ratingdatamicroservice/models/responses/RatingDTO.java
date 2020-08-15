@@ -1,14 +1,14 @@
 package com.ratingdatamicroservice.models.responses;
 
-public class RatingResponse {
+public class RatingDTO {
 	private String movieId;
 	private Integer rating;
 	
-	public RatingResponse() {
+	public RatingDTO() {
 		super();
 	}
 
-	public RatingResponse(String movieId, Integer rating) {
+	public RatingDTO(String movieId, Integer rating) {
 		super();
 		this.movieId = movieId;
 		this.rating = rating;

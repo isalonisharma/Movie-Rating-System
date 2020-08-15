@@ -1,14 +1,14 @@
 package com.moviecatalogmicroservice.models.responses;
 
-public class RatingResponse {
+public class RatingDTO {
 	private String movieId;
 	private Integer rating;
 	
-	public RatingResponse() {
+	public RatingDTO() {
 		super();
 	}
 
-	public RatingResponse(String movieId, Integer rating) {
+	public RatingDTO(String movieId, Integer rating) {
 		super();
 		this.movieId = movieId;
 		this.rating = rating;
@@ -32,6 +32,6 @@ public class RatingResponse {
 
 	@Override
 	public String toString() {
-		return "RatingResponseBean [movieId=" + movieId + ", rating=" + rating + "]";
+		return "RatingDTO [movieId=" + movieId + ", rating=" + rating + "]";
 	}
 }

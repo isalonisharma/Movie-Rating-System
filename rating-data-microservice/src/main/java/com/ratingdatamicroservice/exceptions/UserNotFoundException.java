@@ -1,0 +1,18 @@
+package com.ratingdatamicroservice.exceptions;
+
+/**
+ * Class: UserNotFoundException
+ * Use: this exception is used to notify user that user not found of a
+ * particular id
+ */
+public class UserNotFoundException extends Exception {
+	private static final long serialVersionUID = 1L;
+
+	public UserNotFoundException(String message) {
+		super(message);
+	}
+
+	public UserNotFoundException(String message, Throwable cause) {
+		super(message, cause);
+	}
+}
