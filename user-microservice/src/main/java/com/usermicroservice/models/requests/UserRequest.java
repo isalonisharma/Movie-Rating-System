@@ -6,7 +6,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class CreateUserRequest implements Serializable {
+public class UserRequest implements Serializable {
 
 	private static final long serialVersionUID = 2791142098137213447L;
 
@@ -26,7 +26,7 @@ public class CreateUserRequest implements Serializable {
 	@Email
 	private String username;
 
-	public CreateUserRequest() {
+	public UserRequest() {
 		super();
 	}
 

@@ -8,28 +8,43 @@ import com.usermicroservice.dao.UserDao;
 import com.usermicroservice.entities.User;
 import com.usermicroservice.exceptions.UserNotFoundException;
 import com.usermicroservice.models.DTO.UserDTO;
-import com.usermicroservice.models.requests.CreateUserRequest;
+import com.usermicroservice.models.requests.UserRequest;
 import com.usermicroservice.repository.UserRepository;
 
 @Repository
 public class UserDaoImpl implements UserDao {
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
 	@Override
-	public UserDTO createUser(CreateUserRequest createUserRequest) {
-		User user = new User(createUserRequest.getFirstName(), createUserRequest.getLastName(),
-				createUserRequest.getUsername(), bCryptPasswordEncoder.encode(createUserRequest.getPassword()), true);
+	public User createUser(UserRequest userRequest) {
+		User user = new User(userRequest.getFirstName(), userRequest.getLastName(),
+				userRequest.getUsername(), bCryptPasswordEncoder.encode(userRequest.getPassword()), true);
 		User saveduser = userRepository.save(user);
-		return new UserDTO(saveduser);
+		return saveduser;
 	}
 
 	@Override
-	public UserDTO getUserById(Long id) throws UserNotFoundException {
+	public User getUserById(Long id) throws UserNotFoundException {
 		User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found :: " + id));
-		return new UserDTO(user);
+		return user;
+	}
+	
+	@Override
+	public UserDTO updateUser(UserRequest userRequest, Long id) throws UserNotFoundException {
+		User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found :: " + id));
+		user.setFirstName(userRequest.getFirstName());
+		user.setLastName(userRequest.getLastName());
+		user.setPassword(bCryptPasswordEncoder.encode(userRequest.getPassword()));
+		User updatedUser = userRepository.save(user);
+		return new UserDTO(updatedUser);
+	}
+
+	@Override
+	public void deleteUser(User user) throws UserNotFoundException {
+		userRepository.delete(user);
 	}
 
 	@Override
