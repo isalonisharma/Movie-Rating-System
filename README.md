@@ -15,18 +15,18 @@ API Metering, Centralized Authentication/Authorization, Load Balancing,etc
 
 Every microservice is a Spring Boot application and can be started locally using IDE or ../mvnw spring-boot:run command. Please note that supporting services (Cloud Configuration Server, Dicovery Server and ZUUL API Gateway) must be started before any other application (User Microservice, Movie Catalog Microservice, Movie Information Microservice and Ratings Data Microservice). If everything goes well, you can access the following services.
 
-## Cloud Configuration Server - http://localhost:8082
+### Cloud Configuration Server - http://localhost:8082
 
-a module that uses Spring Cloud Config Server for running configuration server in the native mode. The configuration files are placed on the classpath.
+A module that uses Spring Cloud Config Server for running configuration server in the native mode. The configuration files are placed on the classpath.
 
-## Discovery Server - http://localhost:8761
+### Discovery Server - http://localhost:8761
 
-a module that depending on the example it uses Spring Cloud Netflix Eureka or Spring Cloud Netlix Alibaba Nacos as an embedded discovery server.
+A module that depending on the example it uses Spring Cloud Netflix Eureka or Spring Cloud Netlix Alibaba Nacos as an embedded discovery server.
 
-## Zuul API Gateway -  http://localhost:8081
+### Zuul API Gateway -  http://localhost:8081
 
-a module that Spring Cloud Netflix Zuul for running Spring Boot application that acts as a proxy/gateway in our architecture.
+A module that Spring Cloud Netflix Zuul for running Spring Boot application that acts as a proxy/gateway in our architecture.
 
-## Other Microservices -
+### Other Microservices -
 
 User Microservice, Movie Catalog Microservice, Movie Information Microservice, and Rating Data Microservice
