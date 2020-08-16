@@ -29,4 +29,4 @@ a module that Spring Cloud Netflix Zuul for running Spring Boot application that
 
 ## Other Microservices -
 
-User Microservice, Movie Catalog Microservice, Movie Information Microservice, and Ratings Data Microservice
+User Microservice, Movie Catalog Microservice, Movie Information Microservice, and Rating Data Microservice
