@@ -8,7 +8,7 @@ In this project I'm demonstrating you the most interesting features of Spring Cl
 
 3. Hystrix Circuit Breaker provides alternative behavior in case certain microservice is gone down. This way the system gracefully switches to fallback behavior until the system recovers, rather than entire system suffering the ripple effects of failed service.
 
-4. A Microservice environment needs a gateway. ZUUl Gateway is an entity exposed to the outside world, which allows access to Microservices and does more. A Gateway could do
+4. A Microservice environment needs a gateway. ZUUL Gateway is an entity exposed to the outside world, which allows access to Microservices and does more. A Gateway could do
 API Metering, Centralized Authentication/Authorization, Load Balancing,etc
 
 # Architecture
