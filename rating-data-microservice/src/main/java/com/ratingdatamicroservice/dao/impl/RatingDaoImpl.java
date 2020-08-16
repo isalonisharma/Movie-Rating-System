@@ -15,7 +15,6 @@ import com.ratingdatamicroservice.models.User;
 import com.ratingdatamicroservice.models.responses.RatingDTO;
 import com.ratingdatamicroservice.models.responses.UserRating;
 import com.ratingdatamicroservice.repository.RatingRepository;
-import com.ratingdatamicroservice.repository.UserRepository;
 
 @Repository
 public class RatingDaoImpl implements RatingDao {
