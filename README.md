@@ -4,9 +4,15 @@ In this project I'm demonstrating you the most interesting features of Spring-Bo
 
 1. Spring Cloud Netlix Eureka as a discovery server. Each Service when it comes online registers itself with Service Registry. When some other service wants to communicate with a already registered service, they would ask the Eureka Server the base url for that service. Multiple instances of the same service could register with Eureka, in that case Eureka could help in doing Load Balancing.
 
-2. OpenFiegn for communication between microservice
+![Image of programexe](https://github.com/salonisharma8/Spring-Boot-MicroServices-POC/blob/master/images/discovery-server.png)
+
+2. OpenFiegn for communication between microservice. In this project, Movie Catalog Microservice is having GET API for user catalog which takes information of movie from Movie-Information Microservice and rating from Rating-Data MicroService.
+
+![Image of programexe](https://github.com/salonisharma8/Spring-Boot-MicroServices-POC/blob/master/images/FeignClient.png)
 
 3. Hystrix Circuit Breaker provides alternative behavior in case certain microservice is gone down. This way the system gracefully switches to fallback behavior until the system recovers, rather than entire system suffering the ripple effects of failed service.
+
+![Image of programexe](https://github.com/salonisharma8/Spring-Boot-MicroServices-POC/blob/master/images/hystrix-stream.png)
 
 4. A Microservice environment needs a gateway. ZUUL Gateway is an entity exposed to the outside world, which allows access to Microservices and does more. A Gateway could do
 API Metering, Centralized Authentication/Authorization, Load Balancing,etc
