@@ -1,6 +1,6 @@
 # Spring-Boot-MicroServices
 
-In this project I'm demonstrating you the most interesting features of Spring Cloud Project for building microservice-based architecture. You will find implementation of numerous of Netflix's Microservices platform pieces here. Here are few for your reference
+In this project I'm demonstrating you the most interesting features of Spring Cloud Project for building microservice-based architecture. 
 
 1. Spring Cloud Netlix Eureka as a discovery server. Each Service when it comes online registers itself with Service Registry. When some other service wants to communicate with a already registered service, they would ask the Eureka Server the base url for that service. Multiple instances of the same service could register with Eureka, in that case Eureka could help in doing Load Balancing.
 
