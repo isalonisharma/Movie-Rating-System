@@ -1,4 +1,4 @@
-# Spring-Boot-MicroServices
+# Movie Rating System
 
 In this project I'm demonstrating you the most interesting features of Spring-Boot Microservice-Based Architecture. 
 
