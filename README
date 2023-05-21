@@ -30,7 +30,9 @@ A module that uses Spring Cloud Config Server for running configuration server i
 A module that depending on the example it uses Spring Cloud Netflix Eureka or Spring Cloud Netlix Alibaba Nacos as an embedded discovery server.
 
 ### Zuul API Gateway -  http://localhost:8081
+
 A module that Spring Cloud Netflix Zuul for running Spring Boot application that acts as a proxy/gateway in our architecture.
 
 ### Other Microservices -
+
 User Microservice, Movie Catalog Microservice, Movie Information Microservice, and Rating Data Microservice
